@@ -1,0 +1,7 @@
+Greeting,
+
+You just signed up. Please click the link below
+
+http://{{site.domain}}{% url 'registration_activate' activation_key%}
+
+This link is valid for {{expiration_days}}. If it wasn't you that you signed up, dont panic its safe to ignore

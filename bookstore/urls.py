@@ -5,6 +5,7 @@ from store import views
 urlpatterns = [
 
     url(r'^store/', views.store, name='store'),
+    url(r'^accounts/', include('registration.backends.default.urls')),
     url(r'^admin/', admin.site.urls),
     #url(r'^store/', include('store.urls'), name='store'),
 
