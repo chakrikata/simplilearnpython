@@ -76,10 +76,10 @@ TEMPLATES = [
 
 WSGI_APPLICATION = 'bookstore.wsgi.application'
 
-AUTHENTICATION_BACKENDS={
-    'social.backends.facebook.FacebookAppOAuth2',
-    'django.contrib.auth.backends.ModelBackend'
-}
+##AUTHENTICATION_BACKENDS={
+ #   'social.backends.facebook.FacebookAppOAuth2',
+  #  'django.contrib.auth.backends.ModelBackend'
+#}
 
 # Database
 # https://docs.djangoproject.com/en/2.0/ref/settings/#databases

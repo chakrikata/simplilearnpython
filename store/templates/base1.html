@@ -1,10 +1,13 @@
+{% load staticfiles %}
 <!DOCTYPE html>
 <html lang="en">
+<!--{{ page|title }}-->
 <head>
     <meta charset="UTF-8">
-    <title>Title</title>
+    <title>{% block title %}Welcome to my book{% endblock %}</title>
 </head>
-<body>
+<body background="{% static 'base/img/IMG_4215.JPG' %}">
+{%  block content %}
 {% if request.user.is_authenticated %}
     <h1>
         Welcome,{% if request.user.first_name %}
@@ -17,5 +20,6 @@
     <h4>Welcome, mysterious person! would you like to <a href="{% url 'auth_login' %}">log in?</a> </h4>
 {% endif %}
 This is a my books store There are {{ count }} of books.User location:{{ request.session.location }}
+{% endblock %}
 </body>
 </html>
