@@ -133,7 +133,7 @@ USE_TZ = True
 
 STATIC_URL = '/static/'
 SITE_ID = 1
-STATIC_ROOT=os.path.join(BASE_DIR, 'static/')
+STATIC_ROOT = os.path.join(BASE_DIR, '/static/')
 COMPRESS_ENABLED=True
 STATICFILES_FINDERS={
     'django.contrib.staticfiles.finders.FileSystemFinder',

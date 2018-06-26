@@ -23,11 +23,11 @@
                     <span class="icon-bar"></span>
                     <span class="icon-bar"></span>
                 </button>
-                <a href=URL('index') class="navbar-brand">Mystery Books</a>
+                <a href="{% url 'index' %}" class="navbar-brand">Mystery Books</a>
             </div>
             <div id="navbar" class="collapse navbar-collapse">
                 <ul class="nav navbar-nav">
-                    <li class="hvr-curl-top-right"><a href=URL('index')>Home</a></li>
+                    <li class="hvr-curl-top-right"><a href={% url 'index' %}>Home</a></li>
                     <li class="hvr-curl-top-right"><a href="#about">About</a></li>
                     <li class="hvr-curl-top-right"><a href="#contact">Contact</a></li>
                 </ul>
@@ -46,12 +46,21 @@
         </div>
     </nav>
     <div class="container-fluid">
-        <img src="{% static 'base/img/IMG_4215.JPG' %}" class="bg"/>
+        <img src="{% static 'base/img/header_full.jpg' %}" class="bg"/>
         <div class="parallax">
             <div class="row">
                 {% block body %}
                 <div class="col-md-8 col-md-offset-2 col-sm-12 maincontent">
-                    welcome to our story!
+                    <div style="text-align:center"><h3>welcome to our story!</h3></div>
+                    {% for book in books %}
+                        <a href="{% url 'book_details' book.id %}">
+                        <div class="storefront_book_display">
+                            <img src="{% static 'base/img/empty_cover.jpg' %}">
+                            <span class="storefront_book_title">{{ book.title }}</span>
+                            <span class="storefront_book_author">{{ book.author }}</span>
+                        </div>
+                        </a>
+                    {% endfor %}
                 </div>
                 {% endblock %}
             </div>
