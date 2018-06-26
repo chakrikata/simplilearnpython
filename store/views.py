@@ -1,6 +1,7 @@
 from django.shortcuts import render, redirect
 from django.core.exceptions import ObjectDoesNotExist
-from .models import Book, BookOrder, Cart
+from .models import Book, BookOrder, Cart, Review
+from .forms import ReviewForm
 
 
 def index(request):
@@ -21,9 +22,26 @@ def store(request):
 
 
 def book_details(request, book_id):
+    book = Book.objects.get(pk=book_id)
     context = {
-        'book' : Book.objects.get(pk=book_id),
+        'book': book,
+        #'book': Book.objects.get(pk=book_id),
     }
+    if request.user.is_authenticated:
+        if request.method =='POST':
+            form = ReviewForm(request.POST)
+            if form.is_valid():
+                new_review = Review.objects.create(
+                    user=request.user,
+                    book=context['book'],
+                    text=form.cleaned_data.get('text')
+                )
+                new_review.save()
+        else:
+            if Review.objects.filter(user=request.user, book=context['book']).count() == 0:
+                form = ReviewForm()
+                context['form'] = form
+    context['reviews'] = book.review_set.all()
     return render(request, 'store/detail.html', context)
 
 
