@@ -162,3 +162,4 @@ DEFAULT_FROM_EMAIL = 'book@mysterybooks.com'
 #social auth - facebook
 #SOCIAL_AUTH_FACEBOOK_KEY = ''
 #SOCIAL_AUTH_FACEBOOK_SECRET=''
+

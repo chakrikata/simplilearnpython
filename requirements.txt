@@ -1,5 +1,6 @@
 certifi==2018.4.16
 chardet==3.0.4
+click==6.7
 defusedxml==0.5.0
 Django==2.0.6
 django-appconf==1.0.2
@@ -7,9 +8,16 @@ django-bootstrap-themes==3.3.6
 django-bootstrap3==10.0.1
 django-compressor==1.5
 django-registration-redux==2.4
+Flask==1.0.2
+geos==0.2.1
 idna==2.7
+itsdangerous==0.24
+Jinja2==2.10
+lxml==4.2.2
+MarkupSafe==1.0
 oauthlib==2.1.0
 Pillow==5.1.0
+pygeoip==0.3.2
 PyJWT==1.6.4
 python-social-auth==0.3.6
 python3-openid==3.1.0
@@ -19,3 +27,4 @@ requests-oauthlib==1.0.0
 six==1.11.0
 social-auth-core==1.7.0
 urllib3==1.23
+Werkzeug==0.14.1
