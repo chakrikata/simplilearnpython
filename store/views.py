@@ -2,6 +2,8 @@ from django.shortcuts import render, redirect, get_object_or_404
 from django.core.exceptions import ObjectDoesNotExist
 from .models import Book, BookOrder, Cart, Review
 from .forms import ReviewForm
+import logging
+logger = logging.getLogger(__name__)
 
 
 def index(request):
